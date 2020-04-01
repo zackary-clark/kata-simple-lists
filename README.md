@@ -18,11 +18,11 @@ Here’s a basic set of unit tests to illustrate the behavior.
 list = List.new
 assert_nil(list.find("fred"))
 list.add("fred")
-assert_equal("fred", list.find("fred").value())
+assert_equal("fred", list.find("fred").getValue())
 assert_nil(list.find("wilma"))
 list.add("wilma")
-assert_equal("fred",  list.find("fred").value())
-assert_equal("wilma", list.find("wilma").value())
+assert_equal("fred",  list.find("fred").getValue())
+assert_equal("wilma", list.find("wilma").getValue())
 assert_equal(["fred", "wilma"], list.values())
 
 list = List.new

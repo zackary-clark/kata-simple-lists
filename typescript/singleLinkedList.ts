@@ -1,14 +1,14 @@
 class Node {
-    private valueMember: string;
+    private value: string;
     private next: Node | undefined;
 
     public constructor(value: string) {
-        this.valueMember = value;
+        this.value = value;
         this.next = undefined;
     }
 
-    public value(): string {
-        return this.valueMember;
+    public getValue(): string {
+        return this.value;
     }
 
     public setNext(nextValue: Node | undefined): void {
@@ -28,13 +28,13 @@ export default class List {
     }
 
     public find(value: string): Node | undefined {
-        if (this.isEmpty() || this.head.value() === value) {
+        if (this.isEmpty() || this.head.getValue() === value) {
             return this.head;
         }
         let node = this.head;
         let next = undefined;
         do {
-            if (node.value() === value) {
+            if (node.getValue() === value) {
                 return node;
             }
             next = node.getNext();
@@ -64,7 +64,7 @@ export default class List {
         let node = this.head;
         let ret = [];
         do {
-            ret.push(node.value());
+            ret.push(node.getValue());
             node = node.getNext();
         } while (node !== undefined)
         return ret;
@@ -74,7 +74,7 @@ export default class List {
         if (!this.isEmpty()) {
             let node = this.head;
             let next = undefined;
-            if (this.head.value() === value) {
+            if (this.head.getValue() === value) {
                 this.head = this.head.getNext();
             }
             do {

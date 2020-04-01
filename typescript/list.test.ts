@@ -1,4 +1,4 @@
-import List from "./singleLinkedList";
+import List from "./doubleLinkedList";
 
 describe("List", () => {
     let list: List;
@@ -20,8 +20,8 @@ describe("List", () => {
             list.add("fred");
             list.add("wilma");
             
-            expect(list.find("fred").value()).toBe("fred");
-            expect(list.find("wilma").value()).toBe("wilma");
+            expect(list.find("fred").getValue()).toBe("fred");
+            expect(list.find("wilma").getValue()).toBe("wilma");
         });
     });
     
@@ -39,7 +39,7 @@ describe("List", () => {
             expect(list.values()).toStrictEqual(["fred", "wilma", "betty", "barney"]);
         });
     });
-
+        
     describe("delete", () => {
         it("should remove node from the list", () => {
             list = new List();
